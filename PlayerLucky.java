@@ -1,4 +1,4 @@
-package Player;
+
 public class PlayerLucky extends Player {
 
     public PlayerLucky(String color) {

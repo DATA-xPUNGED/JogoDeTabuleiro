@@ -1,4 +1,4 @@
-package Player;
+
 import java.util.Random;
 
 public abstract class Player {
