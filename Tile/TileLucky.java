@@ -1,3 +1,7 @@
+package Tile;
+import Player.Player;
+import Player.PlayerUnlucky;
+
 public class TileLucky extends Tile{
     public void onStep(Player player){
         if(player instanceof PlayerUnlucky) {

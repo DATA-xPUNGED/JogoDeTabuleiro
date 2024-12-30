@@ -1,5 +1,4 @@
-import java.util.Random;
-
+package Player;
 public class PlayerUnlucky extends Player {
 
     public PlayerUnlucky(String color) {
@@ -7,12 +6,12 @@ public class PlayerUnlucky extends Player {
     }
     @Override
     public int[] rollDice() {
-        Random random = new Random();
-        int[] diceArray = {random.nextInt(6) + 1, random.nextInt(6) + 1};
+        int diceArray[] = super.rollDice();
+        //o resultado deve sempre ser menor ou igual a 6, então se não for, gire os dados denovo até ser.
         while (diceArray[0] + diceArray[1] > 6) {
-            diceArray[0] = random.nextInt(6) + 1;
-            diceArray[1] = random.nextInt(6) + 1;
+            super.rollDice();
         }
+        timesPlayed++;
         return diceArray;
     }
 }
