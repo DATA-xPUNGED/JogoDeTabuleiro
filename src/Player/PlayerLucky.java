@@ -1,9 +1,11 @@
 package Player;
 import java.util.Random;
 
+import Player.enums.Color;
+
 public class PlayerLucky extends Player {
 
-	public PlayerLucky(String color) {
+	public PlayerLucky(Color color) {
 		super(color);
 	}
 	@Override

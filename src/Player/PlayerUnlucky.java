@@ -1,18 +1,19 @@
 package Player;
 import java.util.Random;
 
+import Player.enums.Color;
+
 public class PlayerUnlucky extends Player {
 
-    public PlayerUnlucky(String color) {
+ public PlayerUnlucky(Color color) {
         super(color);
     }
     @Override
     public int[] rollDice() {
-        Random random = new Random();
-        int[] diceArray = {random.nextInt(6) + 1, random.nextInt(6) + 1};
+        int diceArray[] = super.rollDice();
+        //o resultado deve sempre ser menor ou igual a 6, então se não for, gire os dados denovo até ser.
         while (diceArray[0] + diceArray[1] > 6) {
-            diceArray[0] = random.nextInt(6) + 1;
-            diceArray[1] = random.nextInt(6) + 1;
+            super.rollDice();
         }
         int dice1 = diceArray[0];
         int dice2 = diceArray[1];

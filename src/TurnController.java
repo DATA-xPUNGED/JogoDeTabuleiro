@@ -1,8 +1,5 @@
-import java.util.ArrayList;
 
-import Player.Player;
+public class TurnController extends Game{
+			
 
-public class TurnController {
-    ArrayList<Player> playerList;
- 
 }

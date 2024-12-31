@@ -3,6 +3,7 @@ package Player;
 import java.util.Random;
 
 import Player.enums.Color;
+import java.util.Random;
 
 public abstract class Player {
     protected Color color;
@@ -35,13 +36,7 @@ public abstract class Player {
         //rolls 2d6 and returns the results
         Random random = new Random();
         int[] diceArray = {random.nextInt(6) + 1, random.nextInt(6) + 1};
-        int dice1 = diceArray[0];
-        int dice2 = diceArray[1];
-        int sumDice = dice1 + dice2;
-        System.out.println("Jogador da cor " + getColor() + " girou " + (diceArray[0] + diceArray[1]) + " nos dados");
-        movePosition(sumDice);
-        timesPlayed++;
         return diceArray;
-    }
-}
+    }}
+
     
