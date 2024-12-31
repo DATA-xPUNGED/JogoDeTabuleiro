@@ -37,6 +37,8 @@ public abstract class Player {
         Random random = new Random();
         int[] diceArray = {random.nextInt(6) + 1, random.nextInt(6) + 1};
         return diceArray;
-    }}
+    }
+    
+    }
 
     

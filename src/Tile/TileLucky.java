@@ -4,7 +4,7 @@ import Player.PlayerUnlucky;
 
 public class TileLucky extends Tile{
 	@Override
-    public void onStep(Player player){
+    public void onStep(Player player, Board board){
         if(player instanceof PlayerUnlucky) {
             return;
         }
