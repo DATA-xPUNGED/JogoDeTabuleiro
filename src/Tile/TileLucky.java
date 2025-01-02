@@ -1,4 +1,6 @@
-
+package Tile;
+import Player.Player;
+import Player.PlayerUnlucky;
 
 public class TileLucky extends Tile{
 	@Override
