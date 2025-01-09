@@ -13,7 +13,7 @@ public class PlayerUnlucky extends Player {
         int diceArray[] = super.rollDice();
         //o resultado deve sempre ser menor ou igual a 6, então se não for, gire os dados denovo até ser.
         while (diceArray[0] + diceArray[1] > 6) {
-            super.rollDice();
+            diceArray = super.rollDice();
         }
         int dice1 = diceArray[0];
         int dice2 = diceArray[1];
