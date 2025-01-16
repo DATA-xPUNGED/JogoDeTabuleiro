@@ -40,3 +40,7 @@ public class Main {
             player.setPosition(39);
     }
 }
+
+// @Wallyuz ➜ /workspaces/JogoDeTabuleiro (wally02) $ cd /workspaces/JogoDeTabuleiro/src
+// @Wallyuz ➜ /workspaces/JogoDeTabuleiro/src (wally02) $ javac game/Main.java
+// @Wallyuz ➜ /workspaces/JogoDeTabuleiro/src (wally02) $ java game.Main
