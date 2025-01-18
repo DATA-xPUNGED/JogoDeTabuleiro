@@ -13,14 +13,20 @@ public class Main {
         Board board = new Board();
         boolean debugMode = false;
         game.setupPlayers();
-        game.listPlayers(false);
+        Game.listPlayers(false);
+        String continueConfirmation;
 
         ArrayList<Player> playerList = Game.getPlayers();
         int i;
-        for(i = 0; i < playerList.size(); i++){
-            Player currentPlayer = playerList.get(i);
-            executeTurn(currentPlayer, debugMode);
-            board.stepOnTile(currentPlayer);
+        boolean winCondition = false;
+        while (winCondition == false) {
+            for(i = 0; i < playerList.size(); i++){
+                Player currentPlayer = playerList.get(i);
+                executeTurn(currentPlayer, debugMode);
+                board.stepOnTile(currentPlayer);
+            }
+            Game.listPlayers(true);
+            //colocar algo aqui para pausar até ter input
         }
     }
 

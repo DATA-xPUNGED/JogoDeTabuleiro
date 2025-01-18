@@ -8,7 +8,7 @@ public class TileLucky extends Tile{
         if(player instanceof PlayerUnlucky) {
             return;
         }
-        System.out.println("A sorte está com você! Você move 3 espaços a frente.");
+        System.out.println("A sorte está com você! " + player.getColor() + " move 3 espaços a frente.");
         player.movePosition(3);
     }
 }

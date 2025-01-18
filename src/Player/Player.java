@@ -29,7 +29,7 @@ public abstract class Player {
     }
 
     public void movePosition(int value) {
-        position += value;
+        position = position + value;
     }
 
     public int[] rollDice(){

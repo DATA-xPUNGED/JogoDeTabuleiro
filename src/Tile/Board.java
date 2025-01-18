@@ -1,4 +1,5 @@
 package Tile;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import Player.Player;
@@ -23,6 +24,8 @@ public class Board {
             	tileList.add(new TileSwitch());
             }if(tilePosition == 40 ) {
             	tileList.add(new TileFinish());
+            }else{
+                tileList.add(new TileBasic());
             }
         }
     }

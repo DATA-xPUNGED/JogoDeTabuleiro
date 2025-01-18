@@ -147,9 +147,14 @@ public class Game {
 	    }
 
 	
-    public void listPlayers(boolean listPosition){
+    public static void listPlayers(boolean listPosition){
         for(int i = 0; i < playerList.size(); i++){
-            System.out.print("Jogador " + playerList.get(i).getColor() + "\n");
+            System.out.print("Jogador " + playerList.get(i).getColor());
+            if (listPosition) {
+                System.out.println("Na posição " + playerList.get(i).getPosition() + "\n");
+            }else{
+                System.out.println("\n");
+            }
         }
     }
     
