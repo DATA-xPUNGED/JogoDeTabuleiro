@@ -11,7 +11,7 @@ public class TileBeginning extends Tile {
 	@Override
 	public void onStep(Player player, Board board) {
 		// escolhe o player para ir ao inicio;
-		System.out.println("digite a cor do player que você gostaria de mandar para o inicio!");
+		System.out.println("digite a cor do Jogador que você gostaria de mandar para o inicio!");
 		String inputBeginning = scanner.nextLine();
 		Color playerBeginning = Color.valueOf(inputBeginning.toUpperCase());
 		try {

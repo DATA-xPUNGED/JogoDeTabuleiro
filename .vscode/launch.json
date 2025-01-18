@@ -5,9 +5,6 @@
     "version": "0.2.0",
     "configurations": [
 
-        
-
-
         {
             "type": "java",
             "name": "Current File",
@@ -16,17 +13,10 @@
         },
         {
             "type": "java",
-            "name": "Board",
-            "request": "launch",
-            "mainClass": "Board",
-            "projectName": "JogoDeTabuleiro_25e56dac"
-        },
-        {
-            "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "Main",
+            "mainClass": "game.Main",
             "projectName": "JogoDeTabuleiro_25e56dac"
-        }
+        },
     ]
 }
