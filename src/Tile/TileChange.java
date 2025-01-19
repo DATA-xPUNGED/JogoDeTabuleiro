@@ -43,7 +43,11 @@ public class TileChange extends Tile{
 		System.out.println("└─────────┘");
 		System.out.println();
 		Scanner scanner = new Scanner(System.in) ;
-		int carta = scanner.nextInt();
+		int carta = 1;
+		if (scanner.hasNextInt()){
+			carta = scanner.nextInt();
+		}
+		
 		 while (carta < 1 || carta > 3) {
 	            System.out.println("Escolha inválida! Por favor, escolha um número entre 1 e 3.");
 	            carta = scanner.nextInt();
