@@ -5,14 +5,17 @@ import Player.Player;
 import Tile.Tile;
 import Tile.TileBeginning;
 import Tile.TileChange;
-import Tile.TileDontPlay;
+import Tile.TilePrison;
 import Tile.TileFinish;
 import Tile.TileLucky;
 import Tile.TileSwitch;
 import Tile.TileStart;
+import Tile.TileSimple;
 
 public class Board {
+    private static Board uniqueBoard;
     ArrayList<Tile> tileList = new ArrayList<>();
+
     private Board() {
         for (int i = 0; i < 41; i++) {
             int tilePosition = i ; //para que possamos inserir tiles como a gente normalmente pensa neles, 
@@ -20,7 +23,7 @@ public class Board {
             if (tilePosition == 0) {
                 tileList.add(new TileStart());
             }else if (tilePosition == 10 || tilePosition == 25 || tilePosition == 38) {
-                tileList.add(new TileDontPlay());
+                tileList.add(new TilePrison());
             }else  if (tilePosition == 13) {
             	tileList.add(new TileChange());
             }else if( tilePosition == 5 ||tilePosition == 15 ||tilePosition == 30 ) {
@@ -32,10 +35,17 @@ public class Board {
             }else if(tilePosition == 40 ) {
             	tileList.add(new TileFinish());
             }else{
-                tileList.add(new Tile());
+                tileList.add(new TileSimple());
             }
         }
     }
+
+    public static synchronized Board getInstanceBoard(){
+        if (uniqueBoard == null)
+            uniqueBoard = new Board();
+        return uniqueBoard;
+    }
+    
     public ArrayList<Tile> getTiles(){
         return tileList;
     }

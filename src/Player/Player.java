@@ -1,20 +1,21 @@
 package Player;
 
 import java.util.Random;
+import java.util.Scanner;
 
 import Player.enums.Color;
 
-public class Player {
+public abstract class Player {
     protected Color color;
-    protected int coin;
     protected int position = 0;
+    protected int coin;
     protected int timesPlayed;
-    protected boolean stunned;
+    protected boolean imprisoned;
 
     public Player(Color color){
         this.color = color;
         position = 0;
-        stunned = false;
+        imprisoned = false;
     }
 
     public Color getColor() {
@@ -34,21 +35,39 @@ public class Player {
         position = position + value;
     }
 
-    public boolean getStunned(){
-        return stunned;
+    public boolean getImprisoned() {
+        return imprisoned;
     }
 
-    public void setStunned(boolean stunned){
-        this.stunned = stunned;
+    public void setImprisoned(boolean imprisoned) {
+        this.imprisoned = imprisoned;
     }
 
-    public int[] rollDice() {
+    public int getCoin() {
+        return coin;
+    }
+
+    public void setCoin(int coin) {
+        this.coin = coin;
+    }
+
+    public void acquireCoin(int value) throws NotEnoughCoinException{
+        if (coin + value < 0) {
+            throw new NotEnoughCoinException();
+        }else{
+            coin = coin + value;
+        }
+    }
+
+    public abstract int[] rollDice() {
         Random random = new Random();
         int[] diceArray = {random.nextInt(6) + 1, random.nextInt(6) + 1};
         return diceArray;
     }
 
-    public int[] doTurn(){
+    public void doTurn(){
+        checkImprisoment();
+
         int[] diceArray = rollDice();
         // Exibe o resultado de cada dado
         System.out.println("Jogador da cor " + getColor() + " girou " + diceArray[0] + " e " + diceArray[1] + " nos dados");
@@ -71,7 +90,23 @@ public class Player {
         }
 
         timesPlayed++;
-        return diceArray;
+    }
+
+    protected void checkImprisoment(){
+        if(imprisoned) { 
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Jogador " + getColor() + "está preso, mas pode pagar a fiança de 3 moedas para sair agora.");
+            System.out.println("Pagar fiança? (S/N)");
+            String answer = scanner.nextLine();
+            if (answer.toLowerCase().matches("s")){
+                try {
+                    acquireCoin(-3);
+                } catch (NotEnoughCoinException e) {
+                    // TODO: handle exception
+                }
+            }
+            scanner.close();
+        }
     }
 }
     

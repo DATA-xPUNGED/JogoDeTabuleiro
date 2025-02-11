@@ -9,7 +9,7 @@ import Player.Player;
 public class Main {
     public static void main(String[] args) {
         Game game = new Game();
-        //criar board
+        Board board = Board.getInstanceBoard();
         boolean debugMode = false;
         game.setupPlayers();
         Game.listPlayers(false);

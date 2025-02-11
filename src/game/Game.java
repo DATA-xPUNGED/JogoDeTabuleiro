@@ -14,6 +14,10 @@ public class Game {
 	protected static ArrayList<Player> playerList = new ArrayList<Player>();
 	Scanner scanner = new Scanner(System.in);
 	private static final int MAX_PLAYERS = 6;
+
+    public void setupBoard(){
+        
+    }
 	
 	public void setupPlayers(){
         String input = "Você não deveria estar vendo isso!";
