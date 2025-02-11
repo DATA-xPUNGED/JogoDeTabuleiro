@@ -1,4 +1,5 @@
 package Tile;
+import Board.Board;
 import Player.Player;
 import Player.PlayerUnlucky;
 

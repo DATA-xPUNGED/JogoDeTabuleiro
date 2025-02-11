@@ -10,23 +10,13 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-<<<<<<< HEAD
-			<id>1737304960362</id>
-=======
-			<id>1736427437373</id>
->>>>>>> bace53a76ef04ac48305d5610637fd67b7f644a3
+			<id>1737345361377</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

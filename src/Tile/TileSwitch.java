@@ -1,15 +1,28 @@
 package Tile;
 
+import java.util.ArrayList;
+
+import Board.Board;
+import game.Game;
 import Player.Player;
 
 public class TileSwitch extends Tile{
 
 	@Override
 	public void onStep(Player player, Board board) {
-		int i;
-
-		for(i = 0; i < board.getTiles().size(); i++){
-			//pegar quais players tem em cada posição e pegar o primeiro?
+        int i;
+        Player earliestPlayer = player;
+        Player selectedPlayer;
+        ArrayList<Player> playerList = Game.getPlayers();
+		for(i = 0; i < playerList.size(); i++){
+            selectedPlayer = playerList.get(i);
+            if (earliestPlayer.getPosition() >= player.getPosition()) {
+                earliestPlayer = selectedPlayer;
+            }
 		}
+        i = player.getPosition();
+        player.setPosition(earliestPlayer.getPosition());
+        earliestPlayer.setPosition(i);
+        System.out.println("Jogador " + player.getColor() + " na posição " + player.getPosition() + " trocou de lugar com " + earliestPlayer.getColor() + "na posição " + earliestPlayer.getPosition() + "\n");
 	}
 }

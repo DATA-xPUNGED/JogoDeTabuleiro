@@ -3,12 +3,9 @@ package Tile;
 
 import java.util.Scanner;
 
+import Board.Board;
 import Player.Player;
 import game.Game;
-import Player.PlayerLucky;
-import Player.PlayerNormal;
-import Player.PlayerUnlucky;
-import Player.enums.Color;
 
 public class TileChange extends Tile{
 
@@ -46,11 +43,13 @@ public class TileChange extends Tile{
 		int carta = 1;
 		if (scanner.hasNextInt()){
 			carta = scanner.nextInt();
+			 scanner.nextLine();
 		}
 		
 		 while (carta < 1 || carta > 3) {
 	            System.out.println("Escolha inválida! Por favor, escolha um número entre 1 e 3.");
 	            carta = scanner.nextInt();
+	            scanner.nextLine();
 	        }
 		 switch(carta) {
 		 case 1:
@@ -70,8 +69,5 @@ public class TileChange extends Tile{
 		Game.generateRandomLucky(player.getColor());
 		scanner.close();
 		}
-	
 	}
 	
-
-
